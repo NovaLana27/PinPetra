@@ -2,22 +2,22 @@
 
 **Your style, your inspiration.**
 
-PinPetra is a Pinterest-inspired mobile app concept for discovering, saving, and organizing fashion and lifestyle inspiration. Designed as a polished front-end prototype, it brings together an elegant editorial aesthetic, intuitive browsing, and a seamless mobile experience for users who love curating ideas around style, beauty, home décor, and creativity.
+PinPetra is a Pinterest-inspired mobile app concept for discovering, saving, and organizing fashion and lifestyle inspiration. Designed as a polished front-end prototype, it brings together an elegant editorial aesthetic, intuitive browsing, and a seamless mobile experience for users who love curating ideas around style, beauty, home decor, and creativity.
 
 ## ✨ What this project includes
 
 - A complete interactive user flow from splash screen to onboarding, login, interests, feed, search, and profile
-- A Pinterest-style masonry feed with categories including bags, shoes, loafers, clothes, hair braids, makeup, flowers, DIY crafts, accessories, and home décor
+- A Pinterest-style masonry feed with categories including bags, shoes, loafers, clothes, hair braids, makeup, flowers, DIY crafts, accessories, and home decor
 - Save-to-board interactions, notifications, profile settings, and a refined mobile UI experience
 - A feminine, minimal, modern design language built around blush pink, dusty rose, berry pink, and soft ivory tones
 
 ## 🎨 Design Direction
 
-| Token | Value |
-|---|---:|
-| Primary — Blush Pink | #F8D7E5 |
-| Secondary — Dusty Rose | #D88CA0 |
-| Accent — Berry Pink | #C2185B |
+| Token                   |   Value |
+| ----------------------- | ------: |
+| Primary — Blush Pink    | #F8D7E5 |
+| Secondary — Dusty Rose  | #D88CA0 |
+| Accent — Berry Pink     | #C2185B |
 | Background — Soft Ivory | #FFFDFB |
 
 Typography pairs **Playfair Display** for elegant headings and the wordmark with **DM Sans** for clean, modern UI text. The interface uses a signature petal-cut card style to create a distinctive, fashion-forward feel.
@@ -57,7 +57,7 @@ pinpetra-app/
 
 ## 📌 Status
 
-This is a front-end prototype: all data such as pins, boards, likes, saves, and follows is mock/in-memory, and images are placeholder-based. There is no backend or persistence yet — the project is currently focused on demonstrating the experience, flow, and visual direction.
+This is a front-end prototype: all data such as pins, boards, likes, saves, and follows is mock/in-memory, and images are placeholder-based. There is no backend or persistence yet, and the project is currently focused on demonstrating the experience, flow, and visual direction.
 
 ## 🚀 Future Direction
 

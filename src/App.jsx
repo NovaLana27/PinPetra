@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 
 /* ---------------------------------------------------------------------
-   PinPetra — design tokens
+   PinPetra design tokens
    Blush #F8D7E5 · Dusty Rose #D88CA0 · Berry #C2185B · Ivory #FFFDFB
    Display: Playfair Display (editorial serif) · Body/UI: DM Sans
    Signature: "petal-cut" asymmetric corners on every card + a pin/petal
@@ -32,22 +32,81 @@ const CATEGORIES = [
 ];
 
 const TITLES = {
-  "Bags": ["Woven straw tote", "Quilted mini bag", "Pastel crossbody", "Structured top-handle"],
-  "Shoes": ["Strappy block heels", "Satin ballet flats", "Platform sandals", "Pearl-trim mules"],
-  "Loafers": ["Bow-detail loafers", "Suede penny loafers", "Chunky sole loafers", "Two-tone loafers"],
-  "Clothes": ["Linen co-ord set", "Puff-sleeve blouse", "Wrap midi skirt", "Cropped cardigan"],
-  "Hair Braids": ["Boho fishtail braid", "Half-up milkmaid braid", "Braided low bun", "Micro box braids"],
-  "Makeup": ["Dewy blush look", "Soft cut crease", "Glossy berry lip", "Sun-kissed bronze"],
-  "Flowers": ["Dried pampas arrangement", "Pastel peony bouquet", "Pressed flower art", "Ranunculus centerpiece"],
-  "DIY Crafts": ["Macramé wall hanging", "Hand-poured candles", "Beaded phone strap", "Painted terracotta pots"],
-  "Accessories": ["Pearl hair clips", "Layered gold necklaces", "Silk hair scarf", "Tortoiseshell sunglasses"],
-  "Home Décor": ["Ceramic vase edit", "Linen bedding set", "Rattan mirror", "Gallery wall moodboard"],
+  "Bags": ["Woven straw tote", "Quilted mini bag", "Pastel crossbody", "Structured top-handle", "Mini crescent bag", "Soft leather sling"],
+  "Shoes": ["Strappy block heels", "Satin ballet flats", "Platform sandals", "Pearl-trim mules", "Bow kitten heels", "Mesh ballet pumps"],
+  "Loafers": ["Bow-detail loafers", "Suede penny loafers", "Chunky sole loafers", "Two-tone loafers", "Polished square-toe loafers", "Glossy slip-on loafers"],
+  "Clothes": ["Linen co-ord set", "Puff-sleeve blouse", "Wrap midi skirt", "Cropped cardigan", "Ruffled mini dress", "Pleated wide-leg trousers"],
+  "Hair Braids": ["Boho fishtail braid", "Half-up milkmaid braid", "Braided low bun", "Micro box braids", "Ribbon braided ponytail", "Soft cornrow crown"],
+  "Makeup": ["Dewy blush look", "Soft cut crease", "Glossy berry lip", "Sun-kissed bronze", "Velvet mauve liner", "Luminous skin tint"],
+  "Flowers": ["Dried pampas arrangement", "Pastel peony bouquet", "Pressed flower art", "Ranunculus centerpiece", "Wildflower table runner", "Rose petal candle cluster"],
+  "DIY Crafts": ["Macramé wall hanging", "Hand-poured candles", "Beaded phone strap", "Painted terracotta pots", "Pressed flower bookmarks", "Clay charm earrings"],
+  "Accessories": ["Pearl hair clips", "Layered gold necklaces", "Silk hair scarf", "Tortoiseshell sunglasses", "Beaded clutch", "Statement cuff bracelet"],
+  "Home Décor": ["Ceramic vase edit", "Linen bedding set", "Rattan mirror", "Gallery wall moodboard", "Woven tray styling", "Soft boucle throw"],
 };
 
 const CREATORS = ["Amara", "Lily Chen", "Noor", "Priya", "Sofia M.", "Wren", "Isla", "Maya", "Bea", "Junko"];
 
+const CATEGORY_IMAGE_URLS = {
+  Bags: [
+    "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    "https://images.unsplash.com/photo-1584917865442-de89df76afd3",
+    "https://images.unsplash.com/photo-1594223274512-ad4803739b7c",
+  ],
+  Shoes: [
+    "https://images.unsplash.com/photo-1543163521-1bf539c55dd2",
+    "https://images.unsplash.com/photo-1491553895911-0055eca6402d",
+    "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
+  ],
+  Loafers: [
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "https://images.unsplash.com/photo-1523170335258-f5ed11844a49",
+    "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77",
+  ],
+  Clothes: [
+    "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+    "https://images.unsplash.com/photo-1529139574466-a303027c1d8b",
+    "https://images.unsplash.com/photo-1487412912498-0447578fcca8",
+  ],
+  "Hair Braids": [
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e",
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+  ],
+  Makeup: [
+    "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e",
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "https://images.unsplash.com/photo-1487412912498-0447578fcca8",
+  ],
+  Flowers: [
+    "https://images.unsplash.com/photo-1490750967868-88aa4486c946",
+    "https://images.unsplash.com/photo-1468327768560-75b778cbb551",
+    "https://images.unsplash.com/photo-1495243814767-ad6b7c3d8eea",
+  ],
+  "DIY Crafts": [
+    "https://images.unsplash.com/photo-1513364776144-60967b0f800f",
+    "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8",
+    "https://images.unsplash.com/photo-1519710164239-da123dc03ef4",
+  ],
+  Accessories: [
+    "https://images.unsplash.com/photo-1523170335258-f5ed11844a49",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1",
+    "https://images.unsplash.com/photo-1512436991641-6745cdb1723f",
+  ],
+  "Home Décor": [
+    "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+    "https://images.unsplash.com/photo-1484154218962-a197022b5858",
+    "https://images.unsplash.com/photo-1494526585095-c41746248156",
+  ],
+};
+
 function seedImg(seed, w, h) {
-  return `https://picsum.photos/seed/${seed}/${w}/${h}`;
+  return `https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
+}
+
+function categoryImage(category, index, w, h) {
+  const pool = CATEGORY_IMAGE_URLS[category] || CATEGORY_IMAGE_URLS.Clothes;
+  const base = pool[index % pool.length];
+  return `${base}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 }
 
 function makePins() {
@@ -65,7 +124,7 @@ function makePins() {
         likes: 40 + ((id * 37) % 900),
         comments: 2 + ((id * 13) % 40),
         h,
-        img: seedImg(`${cat}-${i}-${id}`, 400, h),
+        img: categoryImage(cat, i + id, 400, h),
       });
       id++;
     });
@@ -186,7 +245,7 @@ function Header({ title, onBack, right }) {
 }
 
 /* ---------------------------------------------------------------------
-   Pin card (masonry) — signature petal-cut corner
+   Pin card (masonry) with signature petal-cut corner
 --------------------------------------------------------------------- */
 function PinCard({ pin, saved, onOpen, onToggleSave }) {
   return (
@@ -221,7 +280,7 @@ function MasonryGrid({ pins, savedIds, onOpen, onToggleSave }) {
       <div className="flex flex-col items-center justify-center py-16 px-8 text-center">
         <Sparkles size={26} color={C.dusty} />
         <p className="mt-3 text-sm" style={{ color: C.inkSoft, fontFamily: "'DM Sans', sans-serif" }}>
-          Nothing here yet — try another category or search term.
+          Nothing here yet. Try another category or search term.
         </p>
       </div>
     );
@@ -258,7 +317,7 @@ function SplashScreen({ go }) {
 
 function OnboardingScreen({ go }) {
   const slides = [
-    { title: "Discover your aesthetic", body: "Explore bags, braids, décor and more — all curated to your taste.", cat: "Flowers" },
+    { title: "Discover your aesthetic", body: "Explore bags, braids, decor and more, all curated to your taste.", cat: "Flowers" },
     { title: "Save what you love", body: "Tap once to bookmark ideas into boards you can revisit anytime.", cat: "Makeup" },
     { title: "Build your world", body: "Organize inspiration into boards and share your favorites.", cat: "Home Décor" },
   ];
@@ -292,7 +351,7 @@ function OnboardingScreen({ go }) {
   );
 }
 
-function LoginScreen({ go }) {
+function LoginScreen({ go, onAuthenticate }) {
   const [mode, setMode] = useState("login");
   return (
     <div className="h-full flex flex-col px-6" style={{ background: C.ivory }}>
@@ -311,7 +370,10 @@ function LoginScreen({ go }) {
         <input placeholder="Password" type="password" className="text-sm px-4 py-3 outline-none" style={{ border: `1px solid ${C.line}`, borderRadius: PETAL_SM, fontFamily: "'DM Sans', sans-serif" }} />
       </div>
       <button
-        onClick={() => go("interests")}
+        onClick={() => {
+          onAuthenticate();
+          go("interests");
+        }}
         className="mt-5 py-3 text-sm font-semibold active:scale-[0.98] transition-transform"
         style={{ background: C.berry, color: C.ivory, borderRadius: 999, fontFamily: "'DM Sans', sans-serif" }}
       >
@@ -417,7 +479,7 @@ function SearchScreen({ savedIds, toggleSave, openPin }) {
           <div className="grid grid-cols-2 gap-2">
             {CATEGORIES.map((c) => (
               <button key={c} onClick={() => setQ(c)} className="relative overflow-hidden text-left" style={{ borderRadius: PETAL, height: 90 }}>
-                <img src={seedImg(`cat-${c}`, 200, 90)} className="w-full h-full object-cover absolute inset-0" />
+                <img src={categoryImage(c, c.length, 200, 90)} className="w-full h-full object-cover absolute inset-0" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(0deg, rgba(43,27,36,0.55), transparent 60%)" }} />
                 <span className="absolute bottom-2 left-3 text-sm font-semibold" style={{ color: C.ivory, fontFamily: "'DM Sans', sans-serif" }}>{c}</span>
               </button>
@@ -701,7 +763,7 @@ function ProfileScreen({ go, boards, savedIds, toggleSave, openPin, following })
   );
 }
 
-function SettingsScreen({ go, prefs, setPrefs }) {
+function SettingsScreen({ go, prefs, setPrefs, onLogout }) {
   const Row = ({ label, sub, keyName }) => (
     <div className="flex items-center justify-between py-3" style={{ borderBottom: `1px solid ${C.line}` }}>
       <div>
@@ -721,12 +783,19 @@ function SettingsScreen({ go, prefs, setPrefs }) {
         <Row label="Private profile" sub="Only followers see your boards" keyName="privateProfile" />
         <Row label="Email updates" sub="Weekly inspiration digest" keyName="email" />
       </div>
-      <button onClick={() => go("login")} className="mt-6 flex items-center gap-2 text-sm font-medium" style={{ color: C.berry, fontFamily: "'DM Sans', sans-serif" }}>
+      <button onClick={() => onLogout()} className="mt-6 flex items-center gap-2 text-sm font-medium" style={{ color: C.berry, fontFamily: "'DM Sans', sans-serif" }}>
         <LogOut size={16} /> Log out
       </button>
     </div>
   );
 }
+
+const defaultBoards = [
+  { id: 1, name: "Everyday Edit", priv: false, cover: seedImg("board-1", 200, 200), pinIds: [1, 5, 9] },
+  { id: 2, name: "Glam Nights", priv: true, cover: seedImg("board-2", 200, 200), pinIds: [21] },
+];
+
+const defaultPrefs = { push: true, privateProfile: false, email: false };
 
 /* ---------------------------------------------------------------------
    Root app
@@ -747,19 +816,63 @@ export default function PinPetraApp() {
   const [savedIds, setSavedIds] = useState(new Set());
   const [likedIds, setLikedIds] = useState(new Set());
   const [following, setFollowing] = useState(new Set());
-  const [boards, setBoards] = useState([
-    { id: 1, name: "Everyday Edit", priv: false, cover: seedImg("board-1", 200, 200), pinIds: [1, 5, 9] },
-    { id: 2, name: "Glam Nights", priv: true, cover: seedImg("board-2", 200, 200), pinIds: [21] },
-  ]);
+  const [boards, setBoards] = useState(defaultBoards);
   const [savePicker, setSavePicker] = useState(null);
   const [board, setBoard] = useState(null);
-  const [prefs, setPrefs] = useState({ push: true, privateProfile: false, email: false });
+  const [prefs, setPrefs] = useState(defaultPrefs);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const nextBoardId = useRef(3);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("pinpetra-state");
+      if (!raw) return;
+      const saved = JSON.parse(raw);
+      if (saved.isAuthenticated) {
+        setScreen(saved.screen || "home");
+        setInterests(new Set(saved.interests || []));
+        setActiveCat(saved.activeCat || "All");
+        setSavedIds(new Set(saved.savedIds || []));
+        setLikedIds(new Set(saved.likedIds || []));
+        setFollowing(new Set(saved.following || []));
+        setBoards(saved.boards || defaultBoards);
+        setPrefs(saved.prefs || defaultPrefs);
+        setIsAuthenticated(true);
+      } else {
+        setScreen("login");
+      }
+    } catch (error) {
+      console.error("Could not load PinPetra state", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("pinpetra-state", JSON.stringify({
+        screen,
+        interests: [...interests],
+        activeCat,
+        savedIds: [...savedIds],
+        likedIds: [...likedIds],
+        following: [...following],
+        boards,
+        prefs,
+        isAuthenticated,
+      }));
+    } catch (error) {
+      console.error("Could not save PinPetra state", error);
+    }
+  }, [screen, interests, activeCat, savedIds, likedIds, following, boards, prefs, isAuthenticated]);
 
   const go = (s) => setScreen(s);
   const toggleInterest = (c) => setInterests((prev) => { const n = new Set(prev); n.has(c) ? n.delete(c) : n.add(c); return n; });
   const toggleLike = (id) => setLikedIds((prev) => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n; });
   const toggleFollow = (name) => setFollowing((prev) => { const n = new Set(prev); n.has(name) ? n.delete(name) : n.add(name); return n; });
+  const authenticate = () => setIsAuthenticated(true);
+  const logout = () => {
+    setIsAuthenticated(false);
+    setScreen("login");
+  };
 
   const openPin = (pin) => { setActivePin(pin); setScreen("post"); };
 
@@ -798,7 +911,7 @@ export default function PinPetraApp() {
   switch (screen) {
     case "splash": content = <SplashScreen go={go} />; break;
     case "onboarding": content = <OnboardingScreen go={go} />; break;
-    case "login": content = <LoginScreen go={go} />; break;
+    case "login": content = <LoginScreen go={go} onAuthenticate={authenticate} />; break;
     case "interests": content = <InterestsScreen go={go} selected={interests} toggle={toggleInterest} />; break;
     case "home": content = <HomeScreen go={go} savedIds={savedIds} toggleSave={quickToggleSave} openPin={openPin} activeCat={activeCat} setActiveCat={setActiveCat} />; break;
     case "search": content = <SearchScreen savedIds={savedIds} toggleSave={quickToggleSave} openPin={openPin} />; break;
@@ -808,7 +921,7 @@ export default function PinPetraApp() {
     case "boardDetail": content = <BoardDetailScreen board={board} go={go} savedIds={savedIds} toggleSave={quickToggleSave} openPin={openPin} />; break;
     case "notifications": content = <NotificationsScreen go={go} following={following} />; break;
     case "profile": content = <ProfileScreen go={go} boards={boards} savedIds={savedIds} toggleSave={quickToggleSave} openPin={openPin} following={following} />; break;
-    case "settings": content = <SettingsScreen go={go} prefs={prefs} setPrefs={setPrefs} />; break;
+    case "settings": content = <SettingsScreen go={go} prefs={prefs} setPrefs={setPrefs} onLogout={logout} />; break;
     default: content = null;
   }
 
