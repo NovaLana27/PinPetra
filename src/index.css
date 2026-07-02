@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  background: linear-gradient(160deg, #f8d7e5 0%, #fffdfb 100%);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(160deg, #f8d7e5 0%, #fffdfb 100%);
+  color: #2b1b24;
+}
+
+* {
+  box-sizing: border-box;
+}
